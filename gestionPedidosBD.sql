@@ -21,14 +21,14 @@ CREATE TABLE pedido (
 ALTER TABLE pedido
 ADD FOREIGN KEY (idcliente) REFERENCES cliente(id);
 
-
 CREATE TABLE articulo (
 	idarticulo int(10) NOT NULL auto_increment PRIMARY KEY,
     nomarticulo varchar(20) default NULL,
     descriparticulo varchar(50) default NULL,
     stockarticulo int(10) default null,
-    precioarticulo NUMERIC(20, 2) default null
-);
+    precioarticulo NUMERIC(20, 2) default null,
+	INDEX(nomarticulo));
+
 
 
 LOCK TABLES cliente WRITE;
